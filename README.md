@@ -75,4 +75,42 @@ M2120 V5
 // Use V0 to disable
 M2120 V0
 
+// Some Lasering
+G0 X200Y Y200 Z50 F2000
 
+// Initial Setup
+M17
+G0 X200 Y Z200 F1000
+
+#20 M2400 S1
+#21 G0 X200 Y0 Z100 F5000
+#22 G1 X200 Y100 Z100 F2000 
+#23 G0 X200 Y0 Z100 F5000
+
+
+//Buzzer
+M2210 F500 T1000
+
+
+M3 S100
+
+M2400 S1
+G0 X150 Y100 Z100
+G1 X150 Y-100 Z100
+
+
+M17
+M2400 S1
+G0 X200 Y20 Z100 F5000
+G1 X200 Y-20 Z100 F5000
+G0 X200 Y20 Z100 F5000
+
+#1 M3 S800
+#2 G1 M3 S500
+#3 G0 X200 Y20 Z100 F1000
+#4 G1 X200 Y-20 Z100 F1000
+
+
+**The Magic is here!**
+
+Turn on the laser is a `M2233 V1` as of the 4.0 firmware. And `M2233 V0` to turn it off. Simple as that.

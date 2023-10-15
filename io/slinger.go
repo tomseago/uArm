@@ -1,11 +1,15 @@
 package io
 
-import "github.com/op/go-logging"
+import (
+	"github.com/op/go-logging"
+	gio "io"
+)
 
 var log = logging.MustGetLogger("io")
 
 type Slinger struct {
 	nextIndex uint32
+	rwc       *gio.ReadWriteCloser
 
 	serialPort *SerialPort
 }
